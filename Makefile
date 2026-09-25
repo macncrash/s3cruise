@@ -33,6 +33,7 @@ sim: s3
 web:
 	@mkdir -p build-web
 	em++ -std=c++17 -O2 -Isrc -DS3_BUILD='"$(BUILD_ID)"' -sUSE_SDL=2 -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=134217728 -sSTACK_SIZE=1048576 \
+		-sEXPORTED_FUNCTIONS=_main,_malloc,_free -sEXPORTED_RUNTIME_METHODS=ccall,UTF8ToString,stringToUTF8 \
 		-sENVIRONMENT=web --shell-file web/shell.html $(SRC) -o build-web/index.html
 
 clean:
