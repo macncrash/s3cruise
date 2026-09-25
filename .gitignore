@@ -1,0 +1,6 @@
+build/
+s3
+.DS_Store
+*.dSYM/
+reports/
+build-web/
