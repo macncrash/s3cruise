@@ -503,9 +503,10 @@ void System::biosInit() {
         }
     vdp.A.clear();
     vdp.B.clear();
-    bitmapToPlane(alloc, vdp.A, 5, 8, logo, 0);
-    bitmapToPlane(alloc, vdp.B, 26, 14, textBitmap("16-BIT", {2, 5, 0, 0, 1}), 0);
-    bitmapToPlane(alloc, vdp.B, 8, 20, textBitmap("PRODUCED BY OR UNDER LICENSE", {1, 6, 0, 0, 1}), 0);
+    const int lx = std::max(0, (40 - (logo.w + 7) / 8 - 7) / 2);  // logo and "16-BIT" centred together
+    bitmapToPlane(alloc, vdp.A, lx, 8, logo, 0);
+    bitmapToPlane(alloc, vdp.B, lx + (logo.w + 7) / 8 + 1, 14, textBitmap("16-BIT", {2, 5, 0, 0, 1}), 0);
+    bitmapToPlane(alloc, vdp.B, 15, 20, textBitmap("S3 ENGINE", {1, 6, 0, 0, 1}), 0);
     bitmapToPlane(alloc, vdp.B, 14, 22, textBitmap("FROM MACNCRASH", {1, 6, 0, 0, 1}), 0);
     vdp.HUD.clear();
 }
