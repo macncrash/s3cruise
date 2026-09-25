@@ -26,7 +26,7 @@ MUSIC), gamepad support, and head-to-head races for up to four players on a LAN
 or over the internet by IP address.
 
 SUNSET CRUISE is a fork of S3 RUN, the arcade racer from
-[(3) RALLY](https://github.com/macncrash/s3garally)'s multi-cart, rebuilt around
+[(3) RALLY](https://github.com/macncrash/s3rally)'s multi-cart, rebuilt around
 the coast. It runs on the same S3-16 console code, and every graphic, song
 and sound is generated when it boots.
 
